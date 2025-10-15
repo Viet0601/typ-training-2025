@@ -1,15 +1,15 @@
+---
 ## Phần 1: Giới thiệu tổng quan về Git
 
 1. **Git là gì?**
-   - Lịch sử Git, lý do Git được tạo ra.
-   - So sánh Git với các VCS khác (SVN, Mercurial).
+- Lịch sử Git, lý do Git được tạo ra.
+- So sánh Git với các VCS khác (SVN, Mercurial).
 2. **Khác biệt giữa Git và GitHub/GitLab/Bitbucket**
-   - Git là công cụ version control.
-   - GitHub/GitLab là dịch vụ lưu trữ Git repository.
+- Git là công cụ version control.
+- GitHub/GitLab là dịch vụ lưu trữ Git repository.
 3. **Cài đặt Git & cấu hình ban đầu**
-   - `git config --global user.name`, `user.email`
-   - Kiểm tra version, thiết lập SSH key.
-
+- `git config --global user.name`, `user.email`
+- Kiểm tra version, thiết lập SSH key.
 ---
 
 ## Phần 2: Làm việc với repository
@@ -78,11 +78,9 @@
 
 ## Phần 7: Thực hành dự án thực tế
 
-22. **Tạo project nhóm (mini project)**
-    - Mỗi học sinh làm một branch riêng, merge vào main.
-23. **Quy ước đặt tên branch, commit message, code review.**
-24. **Tình huống giả lập:**
-    - Merge conflict, revert code, rollback phiên bản, tạo release.
-    - khi nào thì cần thực hiện việc fetch, pull, ..
+22. **Tình huống giả lập:**
+
+- Merge conflict, revert code, rollback phiên bản, tạo release.
+- Khi nào thì cần thực hiện việc fetch, pull, ..
 
 ---
