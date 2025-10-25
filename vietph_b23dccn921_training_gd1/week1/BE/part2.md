@@ -1,10 +1,3 @@
-Chào bạn, đây là nội dung chi tiết cho **Phần 2: OOP (Lập trình Hướng đối tượng)**, bao gồm các khái niệm cơ bản, các tính chất OOP, và Dependency Injection (DI) / Inversion of Control (IoC), được định dạng trong một tệp Markdown.
-
-Bạn có thể sao chép toàn bộ nội dung trong khối mã bên dưới và lưu vào một tệp có đuôi `.md` (ví dụ: `OOP_Guide.md`).
-
------
-
-````markdown
 # Phần 2: Lập trình Hướng đối tượng (OOP)
 
 Phần này tập trung vào các khái niệm cốt lõi của Lập trình Hướng đối tượng (OOP) trong Java, cũng như các nguyên lý thiết kế nâng cao như Inversion of Control (IoC) và Dependency Injection (DI).
