@@ -63,3 +63,51 @@
    - Sử dụng thẻ semantic (`header`, `section`, `footer`) để tổ chức bố cục.
 
 ---
+
+## Phần 5: Báo cáo tuần 1
+
+9. **Weekly Report - HTML Learning Journey**
+    
+    **Yêu cầu báo cáo:**
+    - Tạo file `week1-report.md` trong thư mục cá nhân
+    - Trình bày những gì đã học được trong tuần
+    - Chia sẻ khó khăn gặp phải và cách giải quyết
+    - Demo trang Profile đã tạo
+    
+    **Cấu trúc báo cáo:**
+    ```markdown
+    # Weekly Report - Week 1: HTML Training
+    
+    ## 📚 Những gì đã học được
+    - [Liệt kê các kiến thức HTML đã học]
+    - [Ghi chú về những điểm quan trọng]
+    
+    ## 🎯 Bài tập đã hoàn thành
+    - [ ] Tạo trang Profile cá nhân
+    - [ ] Sử dụng các thẻ HTML cơ bản
+    - [ ] Áp dụng Semantic HTML
+    
+    ## 🚧 Khó khăn gặp phải
+    - [Mô tả các vấn đề khó khăn]
+    - [Cách giải quyết đã áp dụng]
+    - [Nguồn tham khảo đã sử dụng]
+    
+    ## 💡 Insights và kinh nghiệm
+    - [Những điều học được từ thực hành]
+    - [Tips và tricks hữu ích]
+    - [Best practices đã áp dụng]
+    
+    ## 📸 Screenshots/Demo
+    - [Ảnh chụp màn hình trang Profile]
+    - [Link GitHub repository (nếu có)]
+    
+    ## 🎯 Mục tiêu tuần sau
+    - [Những gì muốn học tiếp]
+    - [Cải thiện những điểm nào]
+    ```
+    
+    **Thời gian nộp:** Cuối tuần 1 (Chủ nhật)
+    **Format:** Markdown file
+    **Nộp qua:** Slack channel hoặc email
+
+---
