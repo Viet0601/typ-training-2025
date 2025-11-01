@@ -1,5 +1,6 @@
 package com.dailycode.dreamshop.service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
@@ -16,11 +17,11 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class ProductService {
-    // private final ProductRepository productRepository;
-    private final ArrayList<Product> productsList= new ArrayList<>();
-    private Product createProduct(AddOrUpdatProductRequest request)
-    {
-        Product product= new Product();
+    private final ProductRepository productRepository;
+
+    // private final ArrayList<Product> productsList= new ArrayList<>();
+    private Product createProduct(AddOrUpdatProductRequest request) {
+        Product product = new Product();
         product.setBrand(request.getBrand());
         product.setDescription(request.getDescription());
         product.setName(request.getName());
@@ -28,58 +29,42 @@ public class ProductService {
         product.setQuantity(request.getQuantity());
         return product;
     }
-    public DataResponse addProduct(AddOrUpdatProductRequest request)
-    {
-       Product product = createProduct(request);
-       product.setId(productsList.size()+1L);
-       productsList.add(product);
-       return new DataResponse(HttpStatus.CREATED, true, "Product added", product);
+
+    public DataResponse addProduct(AddOrUpdatProductRequest request) {
+        Product product = createProduct(request);
+        productRepository.save(product);
+        return new DataResponse(HttpStatus.CREATED, true, "Product added", product);
     }
-    public DataResponse getAll()
-    {
-       return new DataResponse(HttpStatus.OK, true, null,productsList);
+
+    public DataResponse getAll() {
+        return new DataResponse(HttpStatus.OK, true, null, productRepository.findAll());
     }
-    private Product findInList(Long id)
-    {
-        for(Product p:productsList){
-            if(p.getId()==id)
-            {
-                return p;
-            }
-        }
-        return null;
-    }
-    public DataResponse getOne(Long id)
-    {
-        Product product = findInList(id);
-        if(product == null) 
-        {
-            throw new NotFoundException("Product not found!");
-        }
+
+    public DataResponse getOne(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Product not found!"));
         return new DataResponse(HttpStatus.OK, true, null, product);
     }
-    public DataResponse updateOne(Long id,AddOrUpdatProductRequest updateProduct)
-    {
-       Product product = findInList(id);
-        if(product == null) 
-        {
-            throw new NotFoundException("Product not found!");
-        }
+
+    public DataResponse updateOne(Long id, AddOrUpdatProductRequest updateProduct) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Product not found!"));
         product.setName(updateProduct.getName());
         product.setBrand(updateProduct.getBrand());
         product.setDescription(updateProduct.getDescription());
         product.setPrice(updateProduct.getPrice());
         product.setQuantity(updateProduct.getQuantity());
-         return new DataResponse(HttpStatus.OK, true, "Product updated", null);
+        productRepository.save(product);
+        return new DataResponse(HttpStatus.OK, true, "Product updated", product);
     }
-    public void deleteOne(Long id)
-    {
-       Product product = findInList(id);
-        if(product == null) 
-        {
-            throw new NotFoundException("Product not found!");
-        }
-        productsList.remove(product);
+
+    public void deleteOne(Long id) {
+        productRepository.findById(id)
+                .ifPresentOrElse(productRepository::delete, () -> new NotFoundException("Product not found!"));
     }
-    
+
+    public DataResponse getProductsByPrice(BigDecimal price) {
+        return new DataResponse(HttpStatus.OK, true, null, productRepository.findProductsByPrice(price));
+    }
+
 }
